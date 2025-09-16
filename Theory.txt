@@ -1,0 +1,120 @@
+                                         Theory JavaScript Questions 
+
+1)Explain the difference between var, let, and const. Provide examples of scope differences.
+  Ans:- Var, Let, Const Is the types of variables
+
+  Var:- Var is the Function Scope Variable; we Can Redeclare and Reassign in Prticular Function Scope.
+
+  let:- let is the Block Level variable we can Reassign in perticular block({})
+
+  const:- const is the Constant variable we can not Redeclare and Reassign.
+
+
+2)What is event delegation in JavaScript? Why is it useful?
+ Ans:- Evenet delegation is the Add Single Event Listener to parent Element and using this Event listner manage multiple Chield 
+ Element events.
+
+  Using Evenet Delegation improve Code Performance, Scalability so it is useful.  
+ 
+3)Explain hoisting with an example for both functions and variables.
+ Ans:- Hostig is the Technique Declare variable and function top on their Containing Scope while running phase before Code Execute.
+
+ Variable Hosting:-
+    console.log(MySalary); Undefined.
+
+    var MySalary=200;
+
+    console.log(MySalary); output-200.
+    
+
+ Function Hostiong:-
+    MyFun(); output- Hello Saurav
+
+    function MyFun(){
+        console.log("Hello Saurav");
+    }
+ 
+4)What are closures? Write a simple function demonstrating closure.
+  Ans: closures is the bundle of functions it can access variables from outer Functions scope, even after the outer function will 
+  executting complete.
+
+   function fun1(){
+    let count=0;
+
+    function fun2(){
+        count++;
+        console.log(count);
+    }
+    return fun2;
+   }
+
+   const counter=fun1();
+
+   counter(); 1
+   counter(); 2
+
+
+5)How does the this keyword work in different contexts (global, object, class, arrow function)?
+
+6)What is the difference between == and === in JavaScript? Why is one preferred over the other?
+  Ans:- It is the Comparision Opratopr
+        == is compare only value 
+        === is Compare value and their data type 
+        ===  this preferred because it is check strictly value and data type so there are less chnaces to errors
+
+7)Explain the call(), apply(), and bind() methods with examples.
+  Ans:-
+         call():-It is the in-built jaascript Method using this we can invoked function immediately, and pass arguments individually.
+
+         apply():- apply() method is same as to call() method but in apply() method we can pass argument as an Array.
+
+              function fun(message,punctuaion){
+                console.log(message+" " name+punctuaion);
+              }
+
+              const Student={name: "Saurav"};
+
+              fun.apply(Student["Hello","!"]);
+
+         bind():-In bind method object can borrow a method from another object.
+              
+              const Student={name:Saurav};
+
+              function fun1(message){
+                console.log(message+" "+name)
+              }
+
+              const bigMessage=message.bind(Student);
+
+              bigMessage("Hello");
+              bigMessage("Hii");
+
+
+8)What are Promises and async/await? Show how to handle errors properly in both.
+  Ans:-
+  Promise:-Promise is an Object thet represnet the failure of an asynchronous Oprations, they have three states(Pending, Fulfilled,rejected)
+  async/await:- async create a function to return a Promise, and await is pauses the function untill the promise is not resolved or rejected.
+  using Try, catch and finally handle errors
+
+     async function getData(){
+        Try{
+            const data=await fetchData;
+            console.log(data);
+        }
+        catch(err){
+            console.log(err);
+        }
+        finally{
+            console.log("Done)
+        }
+     }
+
+9)What is event loop in JavaScript? Explain the difference between microtasks and macrotasks with an example.
+
+10)How does JavaScript memory management work? Explain garbage collection briefly.
+   Ans:-jaascript memory management is mainly work on 3 steps 
+     1) Allocation:- in this phase when user create a variable or object then memory is Allocat
+     2)Usage:- in this phase Program use the allocated memory.
+     3)Release:- in thie phase memory can no longer needed then this released.
+
+    Garbage collection(GC):-Garbage collection is the concept of Clearing the not used memory in long term.
